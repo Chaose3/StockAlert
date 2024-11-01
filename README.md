@@ -13,101 +13,34 @@ This bot sends daily stock signals and alerts based on technical indicators (RSI
 
 ---
 
-## 🛠️ Setup
 
-1. **Clone the Repository**
+Clone the project
 
-    ```bash
-    git clone https://github.com/Chaose3/discord-stock-alert-bot.git
-    cd discord-stock-alert-bot
-    ```
+```bash
+  git clone https://github.com/Chaose3/StockAlert.git
+```
 
-2. **Install Dependencies**
+Go to the project directory
 
-    ```bash
-    pip install discord.py yfinance APScheduler
-    ```
+```bash
+  cd StockAlert
+```
 
-3. **Set Up Environment Variables**
+Install dependencies, might need sudo permissions
 
-   This bot requires two environment variables: `DISCORD_TOKEN` (your bot's token) and `CHANNEL_ID` (the ID of the channel to post alerts). You can set them up by creating a `.env` file or exporting them directly.
+```bash
+  pip install -r requirements.txt
+```
 
-    ```bash
-    export DISCORD_TOKEN=your_discord_token_here
-    export CHANNEL_ID=your_discord_channel_id_here
-    ```
+Start the server
 
-   Alternatively, create a `.env` file in the project root:
-
-    ```plaintext
-    DISCORD_TOKEN=your_discord_token_here
-    CHANNEL_ID=your_discord_channel_id_here
-    ```
-
-4. **Run the Bot**
-
-    ```bash
-    python bot.py
-    ```
-
----
-
-## 🗂️ File Structure
-
-- `bot.py`: Main script for the bot with stock alerts, indicators calculation, and slash commands.
-- `.env`: File for environment variables (add `DISCORD_TOKEN` and `CHANNEL_ID` here).
-
----
-
+```bash
+  python3 app.py
+```
 ## 🧩 Commands
 
 - **`/stock <ticker>`**: Get real-time signals for a specified stock ticker (e.g., `/stock AAPL`).
 - **`/company <company_name>`**: Get the stock ticker for a specified company.
 - **`/clear <amount>`**: Clear the specified number of messages from the chat.
 
----
-
-## 📊 Technical Indicators Used
-
-### 1. Simple Moving Average (SMA)
-   - Uses a 50-day and 200-day moving average to generate buy/sell signals.
-
-### 2. Relative Strength Index (RSI)
-   - Provides signals when the RSI falls below 30 (buy) or rises above 70 (sell).
-
-### 3. Moving Average Convergence Divergence (MACD)
-   - Utilizes a 12-day and 26-day EMA to generate crossover signals.
-
----
-
-## 📝 Usage Example
-
-1. Start the bot:
-    ```bash
-    python3 bot.py
-    ```
-
-2. Use commands in your Discord server:
-   - `/stock AAPL` to check signals for Apple.
-   - `/company Microsoft` to get the ticker symbol for Microsoft.
-   - `/clear 10` to clear the last 10 messages in the channel.
-
----
-
-## 🐞 Troubleshooting
-
-- **Invalid Discord Token**: Check that your token in `.env` is correct.
-- **Channel ID Issues**: Ensure the bot has permission to access the channel specified by `CHANNEL_ID`.
-- **Command Not Found**: Make sure your bot has message content and slash command intents enabled in the Discord Developer Portal.
-
----
-
-## 📃 License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
----
-
-## 💬 Support
-
-For questions or support, open an issue or contact Chaose3 on discord
+---chaose3 on discord or send me an email at chaose3@outlook.com
